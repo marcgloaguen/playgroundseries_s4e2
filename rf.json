@@ -1,0 +1,12 @@
+{
+    "n_estimators": 450,
+    "criterion": "entropy",
+    "max_leaf_nodes": 47,
+    "min_samples_split": 28,
+    "min_samples_leaf": 25,
+    "min_weight_fraction_leaf": 5.80921126353863e-06,
+    "max_features": null,
+    "min_impurity_decrease": 4.206302054273277e-08,
+    "bootstrap": true,
+    "class_weight": "balanced_subsample"
+}
