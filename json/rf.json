@@ -1,0 +1,12 @@
+{
+    "n_estimators": 445,
+    "criterion": "log_loss",
+    "max_leaf_nodes": 44,
+    "min_samples_split": 12,
+    "min_samples_leaf": 23,
+    "min_weight_fraction_leaf": 0.09410403503241171,
+    "max_features": "log2",
+    "min_impurity_decrease": 2.9462513465999087e-09,
+    "bootstrap": false,
+    "class_weight": "balanced"
+}
