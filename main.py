@@ -32,7 +32,7 @@ def main(target: str):
         n_jobs=-1,
         verbose=3
         )
-    print(f'Mean score : {np.mean(scores):.5f} ± {np.mean(scores):.5f}')
+    print(f'Mean score : {np.mean(scores):.5f} ± {np.std(scores):.5f}')
     voting.fit(X, y)
     test = pd.read_csv('data/test.csv', index_col='id')
     submission = pd.read_csv("data/sample_submission.csv", index_col='id')
