@@ -11,13 +11,30 @@ from sklearn.ensemble import RandomForestClassifier
 
 
 SEED = 42
-numeric_features = ['Age', 'Height', 'Weight', 'FCVC', 'NCP', 'CH2O', 'FAF', 'TUE']
+numeric_features = [
+    'Age',
+    'Height',
+    'Weight',
+    'FCVC',
+    'NCP',
+    'CH2O',
+    'FAF',
+    'TUE',
+    'BMI'
+    ]
 FeatureScaler = ColumnTransformer(
     transformers=[
         ('scaler', StandardScaler(), numeric_features)
     ],
     remainder='passthrough'
 )
+
+
+def bmi(df):
+    data = df.copy()
+    data['BMI'] = (data['Weight']/data['Height']**2)
+    return data
+
 
 with open('json/xgb.json', 'r') as json_file:
     params_xgb = json.load(json_file)
@@ -45,7 +62,6 @@ LGBM = make_pipeline(
             **params_lgbm,
             **{
                 'random_state': SEED
-            
                 }
             }
         )
@@ -54,6 +70,7 @@ LGBM = make_pipeline(
 with open('json/cat.json', 'r') as json_file:
     params_cat = json.load(json_file)
 CAT = make_pipeline(
+    FunctionTransformer(bmi),
     FeatureScaler,
     CatBoostClassifier(
         **{
@@ -64,7 +81,7 @@ CAT = make_pipeline(
                 'eval_metric': 'AUC',
                 'loss_function': 'MultiClass',
                 'verbose': False,
-                'cat_features': [8, 9, 10, 11, 12, 13, 14, 15]
+                'cat_features': [9, 10, 11, 12, 13, 14, 15, 16]
                 }
             }
     )

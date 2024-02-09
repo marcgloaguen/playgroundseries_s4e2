@@ -41,6 +41,7 @@ def main(target: str):
         )
     name = dt.now().strftime("%Y%m%d_%H%M")
     submission.to_csv(f"submission/{name}.csv")
+    print("Submission saved")
 
 
 if __name__ == "__main__":

@@ -1,12 +1,12 @@
 {
-    "n_estimators": 445,
-    "criterion": "log_loss",
-    "max_leaf_nodes": 44,
-    "min_samples_split": 12,
-    "min_samples_leaf": 23,
-    "min_weight_fraction_leaf": 0.09410403503241171,
-    "max_features": "log2",
-    "min_impurity_decrease": 2.9462513465999087e-09,
-    "bootstrap": false,
-    "class_weight": "balanced"
+    "n_estimators": 29,
+    "criterion": "entropy",
+    "max_leaf_nodes": null,
+    "min_samples_split": 3,
+    "min_samples_leaf": 4,
+    "min_weight_fraction_leaf": 0.00029867649793195554,
+    "max_features": null,
+    "min_impurity_decrease": 0.000731711871911779,
+    "bootstrap": true,
+    "class_weight": null
 }
