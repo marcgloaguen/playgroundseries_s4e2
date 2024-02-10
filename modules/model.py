@@ -45,8 +45,10 @@ XGB = make_pipeline(
         **{
             **params_xgb,
             **{
+                'objective': 'multi:softmax',
+                'booster': 'gbtree',
                 'random_state': SEED,
-                'tree_method': 'hist'
+                'tree_method': 'hist',
                 }
             }
         )
@@ -61,6 +63,10 @@ LGBM = make_pipeline(
         **{
             **params_lgbm,
             **{
+                "objective": "multiclass",
+                "metric": "multi_logloss",
+                "boosting_type": "gbdt",
+                "num_class": 7,
                 'random_state': SEED
                 }
             }

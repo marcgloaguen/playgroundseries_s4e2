@@ -16,5 +16,5 @@ def FeaturesEncoding(df: pd.DataFrame) -> pd.DataFrame:
         {'no': 0, 'Sometimes': 1, 'Frequently': 2, 'Always': 3}
         )
     data = pd.get_dummies(data, columns=['MTRANS'], dtype='int8')
-    data['BMI'] = (data['Weight']/data['Height']**2)
+    data['BMI'] = (data['Weight']/(data['Height']**2))
     return data
