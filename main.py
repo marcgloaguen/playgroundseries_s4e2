@@ -30,7 +30,7 @@ def main(target: str):
         scoring='accuracy',
         cv=SKF,
         n_jobs=-1,
-        verbose=3
+        verbose=20
         )
     print(f'Mean score : {np.mean(scores):.5f} ± {np.std(scores):.5f}')
     voting.fit(X, y)
